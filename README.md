@@ -1,34 +1,44 @@
-# Agentic Site Starter
+# Agentic Site Template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?logo=github)](https://github.com/miichaelsmedley/agentic-site-template/generate)
 
 A transportable Astro, TinaCMS, GitHub and Cloudflare website template for people beginning their agentic coding journey.
 
-This is a real editable website, not a blank tutorial. It includes the reusable block system from the existing Bands sites, local TinaCMS editing, starter content, local setup checks, Cloudflare Worker assets deployment, and a GitHub Actions deploy workflow.
+This is a real editable website, not a blank tutorial. It ships with a 30-block component library, local TinaCMS editing, starter content, environment checks, a working contact form (your first dynamic page), Cloudflare Worker assets deployment, and a GitHub Actions deploy workflow.
 
 ## What You Need
 
 - A GitHub account
-- A Cloudflare account
+- A Cloudflare account (free tier is fine)
 - Node.js 22.12.0 or newer
 - An AI coding agent such as Codex, Claude Code, Cursor, or GitHub Copilot
+- A Resend account if you want the contact form to actually email you (optional, free tier is fine)
 
 No private package registry is required. The shared UI package is bundled inside `./packages/ui`.
 
-## How A Beginner Uses This
+## Get Your Own Copy In Five Minutes
 
-The clean open-source path is:
+This repo is a **GitHub Template**. That means you don't fork it — you copy it. The button above creates a brand-new repository under your own account with no shared history. You can then delete it, rewrite it, or push it to your own Cloudflare without affecting this one.
 
-1. Open the template repository on GitHub.
-2. Click **Use this template** or fork it.
-3. Clone the new repository to their computer or open it in GitHub Codespaces.
-4. Run `npm run setup`.
-5. Run `npm run dev`.
-6. Open the local site and TinaCMS editor.
-7. Ask Codex or Claude Code to make small changes and run `npm run build`.
-8. Connect Cloudflare when they are ready to publish.
+1. Click **[Use this template](https://github.com/miichaelsmedley/agentic-site-template/generate)** at the top of the GitHub page (or the badge above).
+2. Choose your account, give the new repo a name (e.g. `my-business-site`), and click **Create repository**.
+3. On your computer, clone the new repo:
+   ```bash
+   git clone https://github.com/<your-username>/<your-new-repo>.git
+   cd <your-new-repo>
+   ```
+   Or open it directly in GitHub Codespaces — Node is pre-configured by `.devcontainer/devcontainer.json`.
+4. Install and start it:
+   ```bash
+   npm run setup
+   npm run dev
+   ```
+5. Open the site at `http://localhost:4330` and the TinaCMS editor at `http://localhost:4330/admin/index.html`.
+6. Hand the project to your coding agent. Ask for one small change. Run `npm run build`. Iterate.
+7. When you're ready to publish, follow [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) to deploy to Cloudflare.
 
-If they use Codespaces, Node is already handled by `.devcontainer/devcontainer.json`. If they work locally, `.nvmrc` and `.node-version` tell their machine which Node version this project expects.
+If `.nvmrc` or `.node-version` complains, install the matching Node version (`nvm install` or `fnm install` will read those files automatically).
 
 ## Quick Start
 

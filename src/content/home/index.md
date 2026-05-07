@@ -12,10 +12,7 @@ hero:
       duration_seconds: 8
       layout: dot-grid
       theme: dark
-      effects:
-        - grid
-        - particles
-        - mobile-glow
+      effects: []
       eyebrow: 'ASTRO, TINACMS, GITHUB, CLOUDFLARE'
       heading: 'A website starter people can actually move, edit, and deploy'
       heading_font: site
