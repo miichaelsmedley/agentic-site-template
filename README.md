@@ -3,9 +3,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?logo=github)](https://github.com/miichaelsmedley/agentic-site-template/generate)
 
-A transportable Astro, TinaCMS, GitHub and Cloudflare website template for people beginning their agentic coding journey.
+A transportable Astro, TinaCMS, GitHub and Cloudflare website template for people beginning their vibe coding journey with Codex or another AI coding agent.
 
-This is a real editable website, not a blank tutorial. It ships with a 30-block component library, local TinaCMS editing, starter content, environment checks, a working contact form (your first dynamic page), Cloudflare Worker assets deployment, and a GitHub Actions deploy workflow.
+This is a real editable website, not a blank tutorial. It ships with a 30-block component library, local TinaCMS editing, starter content, environment checks, a working contact form (your first dynamic page), Cloudflare Worker assets deployment, a GitHub Actions deploy workflow, and prompts that help you ask Codex for outcomes instead of technical implementation details.
+
+The point is not only to replace a WordPress site. That is a useful first use case, because many small sites are mostly brochure pages plus a few dynamic pieces. The bigger point is to give a beginner a working project where they can say what they want, let Codex handle the technical work where possible, and verify each change before moving on.
 
 ## What You Need
 
@@ -35,7 +37,7 @@ This repo is a **GitHub Template**. That means you don't fork it — you copy it
    npm run dev
    ```
 5. Open the site at `http://localhost:4330` and the TinaCMS editor at `http://localhost:4330/admin/index.html`.
-6. Hand the project to your coding agent. Ask for one small change. Run `npm run build`. Iterate.
+6. Hand the project to Codex or your coding agent. Ask for one small outcome in plain language. Let the agent inspect the repo, make the technical change, run `npm run build`, and explain what changed.
 7. When you're ready to publish, follow [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) to deploy to Cloudflare.
 
 If `.nvmrc` or `.node-version` complains, install the matching Node version (`nvm install` or `fnm install` will read those files automatically).
@@ -82,7 +84,34 @@ Basic visual settings are editable in TinaCMS under **Site Settings**:
 
 Hero slider slides also have their own **Heading Font** and **Heading Size** controls. Use **Compact** for long headings so the words do not bunch together.
 
-You can then ask your coding agent to update content in `src/content`, components in `src/components`, and docs in `docs`.
+You can then ask Codex to update content in `src/content`, components in `src/components`, backend routes in `src/worker`, and docs in `docs`.
+
+## Vibe Coding With Codex
+
+The intended loop is:
+
+1. Describe the outcome you want.
+2. Let Codex inspect the existing structure.
+3. Let Codex choose the technical path and edit the files.
+4. Let Codex run `npm run doctor` or `npm run build`.
+5. Review the result in plain language.
+6. Commit the working state.
+
+Good prompts sound like this:
+
+```text
+I run a local music school. Turn the homepage into a simple music lesson website. Keep the current layout and run the build when done.
+```
+
+```text
+Add a Services page for three service packages. Make it editable in TinaCMS and add it to navigation. Run npm run build.
+```
+
+```text
+Make the contact form save submissions to a database and add a simple admin page where I can view them. Keep secrets out of the repo and explain what I need to set in Cloudflare.
+```
+
+Codex can usually handle code, schema changes, content files, Worker routes, D1 migrations, and build checks. You still need to provide the business facts, approve wording, log in to external accounts, and supply any secret values.
 
 ## How The NPM Packages Work
 
@@ -144,10 +173,10 @@ npm run deploy      # build and deploy to Cloudflare
 ## Good First Agent Prompt
 
 ```text
-Inspect this repo, keep the current structure, and update the homepage copy for my business. Then run npm run build and summarise the files you changed.
+Inspect this repo, keep the current structure, and update the homepage copy for my business. Ask me only for business facts you cannot infer. Then run npm run build and summarise the files you changed.
 ```
 
-More guidance lives in `docs/AGENTIC-CODING-GUIDE.md`, `docs/DEPLOYMENT.md`, and `docs/TROUBLESHOOTING.md`.
+More guidance lives in `docs/CODEX-VIBE-CODING-GUIDE.md`, `docs/AGENTIC-CODING-GUIDE.md`, `docs/DEPLOYMENT.md`, and `docs/TROUBLESHOOTING.md`.
 
 ## License
 

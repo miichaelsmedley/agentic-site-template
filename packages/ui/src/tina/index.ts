@@ -52,3 +52,11 @@ export {
   heroSlideFields,
   heroSliderFields,
 } from './heroSlider';
+
+// "Live Data" sidebar entries: wrap a site's dynamic admin pages inside Tina
+// via iframe so editors don't have to leave the CMS to view submissions,
+// availability, products, etc.
+export {
+  registerDynamicAdminLinks,
+  type DynamicAdminLink,
+} from './dynamicAdminLinks';

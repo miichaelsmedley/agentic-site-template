@@ -120,4 +120,3 @@ blocks:
 seo_title: Agentic Site Starter
 seo_description: 'A generic Astro, TinaCMS, GitHub and Cloudflare website template for novice agentic coders.'
 ---
-
