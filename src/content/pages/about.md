@@ -3,7 +3,7 @@ title: About
 hero_heading: About This Starter
 hero_subheading: A practical first website for people who want to learn by changing real code with an AI coding agent.
 hero_image: /images/starter-hero.png
-intro: This starter is based on the same Astro and TinaCMS pattern used across the existing band sites, but it has been made portable so it can become a GitHub template repo.
+intro: This starter combines a proven Astro and TinaCMS content pattern with a portable setup that works as a GitHub template repository.
 blocks:
   - heading: What this gives you
     body: |

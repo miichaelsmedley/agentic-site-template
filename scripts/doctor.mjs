@@ -56,9 +56,9 @@ console.log('\nAgentic Site Starter doctor\n');
 
 const nodeVersion = parseNodeVersion();
 check(
-  nodeVersion.major > 22 || (nodeVersion.major === 22 && nodeVersion.minor >= 12),
+  nodeVersion.major === 24 && nodeVersion.minor >= 18,
   `Node version ${process.versions.node}`,
-  'need 22.12.0 or newer'
+  'need Node 24.18.0 LTS; Node 26 Current is not supported by TinaCMS dependencies'
 );
 
 const npmVersion = run('npm', ['-v']);
