@@ -42,7 +42,7 @@ const articleData = {
   datePublished: post.data.pubDate.toISOString(),
   ...(post.data.updatedDate && { dateModified: post.data.updatedDate.toISOString() }),
   author: {
-    '@type': 'Person',
+    '@type': post.data.author ? 'Person' : 'Organization',
     name: post.data.author || siteConfig.name,
     url: siteConfig.url,
   },

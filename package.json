@@ -7,15 +7,15 @@
   "license": "MIT",
   "author": "Michael Smedley",
   "engines": {
-    "node": ">=22.12.0",
-    "npm": ">=10"
+    "node": ">=24.18.0 <25",
+    "npm": ">=11"
   },
   "scripts": {
     "setup": "node scripts/setup.mjs",
     "configure": "node scripts/configure-site.mjs",
     "doctor": "node scripts/doctor.mjs",
-    "dev": "cross-env TINA_PUBLIC_IS_LOCAL=true tinacms dev --datalayer-port 9010 --port 4010 -c \"astro dev --port 4330 --host 0.0.0.0\"",
-    "dev:astro": "astro dev --port 4330 --host 0.0.0.0",
+    "dev": "cross-env TINA_PUBLIC_IS_LOCAL=true ASTRO_DEV_BACKGROUND=0 tinacms dev --datalayer-port 9010 --port 4010 -c \"astro dev --port 4330 --host 0.0.0.0\"",
+    "dev:astro": "cross-env ASTRO_DEV_BACKGROUND=0 astro dev --port 4330 --host 0.0.0.0",
     "build:cms": "cross-env TINA_PUBLIC_IS_LOCAL=true tinacms build --local --skip-cloud-checks --datalayer-port 9110 --port 4110",
     "build": "npm run build:cms && astro build",
     "preview": "astro preview --port 4331 --host 0.0.0.0",
@@ -25,17 +25,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "3.7.3",
     "@bands/ui": "file:./packages/ui",
-    "astro": "^6.2.1",
-    "tinacms": "^3.7.5"
+    "astro": "7.1.1",
+    "tinacms": "3.11.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.4",
-    "@tinacms/cli": "^2.2.5",
-    "cross-env": "^7.0.3",
-    "vite": "^7",
-    "wrangler": "^4.0.0"
+    "@tailwindcss/typography": "0.5.20",
+    "@tailwindcss/vite": "4.3.3",
+    "@tinacms/cli": "2.5.6",
+    "cross-env": "10.1.0",
+    "vite": "8.1.5",
+    "wrangler": "4.112.0"
   }
 }

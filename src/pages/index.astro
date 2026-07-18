@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
-import StructuredData from '../components/seo/StructuredData.astro';
 import TinaVisualEditing from '../components/tina/TinaVisualEditing.astro';
 import HomePosterWallLanding from '../components/home/HomePosterWallLanding.astro';
 import siteConfig from '../config/site';
@@ -12,20 +11,6 @@ const homeHeroImage =
   homeEntry?.data.hero.slides?.[0]?.image ||
   siteConfig.seo.defaultOgImage;
 
-const personData = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: siteConfig.name,
-  description: siteConfig.description,
-  url: siteConfig.url,
-  image: new URL(siteConfig.seo.defaultOgImage, siteConfig.url).toString(),
-  email: siteConfig.social.email,
-  jobTitle: 'Technology, Growth and Delivery Leader',
-  worksFor: {
-    '@type': 'Organization',
-    name: siteConfig.name,
-  },
-};
 ---
 
 <PageLayout
@@ -36,6 +21,5 @@ const personData = {
   bodyClass="home-dark-page"
 >
   <TinaVisualEditing collection="home" relativePath="index.md" />
-  <StructuredData data={personData} />
   <HomePosterWallLanding homeEntry={homeEntry} />
 </PageLayout>

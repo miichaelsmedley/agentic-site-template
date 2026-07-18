@@ -17,7 +17,7 @@ hero:
       heading: 'A website starter people can actually move, edit, and deploy'
       heading_font: site
       heading_size: balanced
-      subheading: 'This generic site keeps the proven band-site block system, but packages it with scripts, docs, and deployment defaults for someone starting their agentic coding journey.'
+      subheading: 'This generic site packages a proven content-block system with scripts, docs, and deployment defaults for someone starting their agentic coding journey.'
       background_image: /images/starter-hero.png
       badges:
         - Editable content
@@ -69,8 +69,8 @@ blocks:
     body: |
       The template includes the site, the shared block library, starter content, local editing, Cloudflare deploy configuration, a setup script, a doctor script, and a plain-English guide. A new user can clone the repo, run the setup, open the editor, and ask an AI coding agent to make changes with enough structure to stay on track.
     image_position: right
-    cta_text: Read the setup guide
-    cta_url: /contact
+    cta_text: Explore the guides
+    cta_url: /writing
     background: surface
     _template: imageTextBlock
   - kicker: What is bundled

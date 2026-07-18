@@ -23,12 +23,14 @@ const parseNodeVersion = () => {
 };
 
 const nodeVersion = parseNodeVersion();
-const nodeIsSupported = nodeVersion.major > 22 || (nodeVersion.major === 22 && nodeVersion.minor >= 12);
+const nodeIsSupported = nodeVersion.major === 24 && nodeVersion.minor >= 18;
 
 console.log('\nAgentic Site Starter setup\n');
 
 if (!nodeIsSupported) {
-  console.error(`Node ${process.versions.node} is too old. Install Node 22.12.0 or newer, then run setup again.`);
+  console.error(
+    `Node ${process.versions.node} is not supported by this starter. Install Node 24.18.0 LTS (not Node 26 Current), then run setup again.`
+  );
   process.exit(1);
 }
 

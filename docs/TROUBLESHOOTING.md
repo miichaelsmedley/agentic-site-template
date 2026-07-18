@@ -2,7 +2,7 @@
 
 ## Node Version Problems
 
-This project expects Node.js 22.12.0 or newer.
+This project expects Node.js 24.18.0 LTS or a newer Node 24 patch release. Do not choose Node 26 Current for this pinned TinaCMS toolchain.
 
 Check:
 
@@ -17,6 +17,8 @@ nvm install
 nvm use
 ```
 
+If you installed Node from the Node.js website, download the current **Node 24 LTS** installer from [nodejs.org](https://nodejs.org/en/download), install it, close and reopen your terminal, then run `node -v` again.
+
 ## Dependencies Did Not Install
 
 Run:
@@ -25,12 +27,13 @@ Run:
 npm run setup
 ```
 
-If that still fails, delete `node_modules` and reinstall:
+If that still fails, close the development server, delete the `node_modules` folder in Finder or File Explorer, then run:
 
 ```bash
-rm -rf node_modules
-npm install --include=optional --no-audit --no-fund
+npm ci --include=optional --no-audit --no-fund
 ```
+
+If the error mentions `better-sqlite3`, check `node -v` first. It usually means the project is being run with Node 26 Current instead of the supported Node 24 LTS version.
 
 ## TinaCMS Editor Does Not Open
 
@@ -53,6 +56,8 @@ The template uses:
 - TinaCMS datalayer port: `9010`
 
 If those ports are busy, stop the old process or change the ports in `package.json` and `astro.config.mjs`.
+
+Always start the combined editor with `npm run dev`. Astro 7 can automatically move its development server into the background when it detects an AI coding agent; the template's command disables that behaviour so TinaCMS and Astro stay connected.
 
 ## Build Fails Before Astro Starts
 
